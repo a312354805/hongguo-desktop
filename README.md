@@ -2,9 +2,9 @@
 
 为 Windows PC 打造的非官方红果短剧客户端。用更适合桌面的布局，浏览短剧与漫剧、切换推荐故事、管理片单，并接着上次的进度继续看。
 
-**[下载最新版本](https://github.com/a312354805/hongguo-desktop/releases/latest)** · [全部版本](https://github.com/a312354805/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
+[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases) · **[下载最新版本](https://github.com/a312354805/hongguo-desktop/releases/latest)** · [全部版本](https://github.com/a312354805/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> 当前版本 **1.1.17** · Windows x64 安装版 · 约 **24.7 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
+> 当前版本 **1.1.20** · Windows x64 安装版 · 约 **28.6 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
 
 ## 下载安装
 
@@ -12,24 +12,25 @@
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.17 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.17/hongguo-desktop-1.1.17-remote-signing-x64-setup.exe)**
+**[下载 1.1.20 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.20/hongguo-desktop-1.1.20-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
-- 客户端使用 Microsoft Edge WebView2；缺少运行时的设备，安装程序会尝试通过下载引导安装。
+- 首次启动会检测 WebView2 运行时与当前用户的 HEVC 视频扩展，缺少时自动调用内置微软签名组件安装，并重新检查；已有组件直接跳过。
+- WebView2 补装需要联网。若系统策略、权限或许可阻止 HEVC 安装，会显示错误与继续/退出选项。
+- 部分电脑只有声音、进度正常但视频黑屏，与缺少 HEVC 解码支持有关；已有用户安装 HEVC 后恢复画面，并确认自动准备流程可用。
 - 浏览内容与播放视频需要联网；内容是否可用也取决于远程签名服务及第三方接口。
-- 仓库为私有时，查看 Release 和下载安装包需要对应的 GitHub 访问权限。
 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.17-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.20-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.17 安装包的 SHA-256：
+1.1.20 安装包的 SHA-256：
 
 ```text
-8fa4c0beb2e28feef08bfad91e2b4959d603dc1646b99f08f555f518bf8d77d3
+7f1c2ee91833958aff886acd6e1a21b1bc37c87f5f36953c54a300decfaf2b61
 ```
 
 ## 界面预览
@@ -84,7 +85,7 @@ Get-FileHash .\hongguo-desktop-1.1.17-remote-signing-x64-setup.exe -Algorithm SH
 | 个人片单 | 我的收藏、稍后再看、最近观看、我的预约 |
 | 账号同步 | 手机号登录后使用云端片单与观看进度同步；预约等账号功能需要登录 |
 | 桌面体验 | 可折叠侧栏、系统托盘、可自定义老板键；收起时暂停，恢复时按原播放意图处理 |
-| 数据与更新 | JSON 备份导出 / 导入、安装版应用内检查更新与下载安装 |
+| 数据与更新 | JSON 备份导出 / 导入、安装版应用内检查更新与下载安装；设置页顶部提供 GitHub 项目信息入口 |
 
 清晰度、弹幕、账号同步及预约等功能以具体内容和上游接口实际支持情况为准。
 
@@ -110,13 +111,11 @@ Get-FileHash .\hongguo-desktop-1.1.17-remote-signing-x64-setup.exe -Algorithm SH
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
 
-### 1.1.17 更新摘要
+### 1.1.20 更新摘要
 
-- 改善保留观看历史后，发现页可能出现「没有推荐内容」的问题。
-- 优先寻找新内容；暂无新推荐时提供明确提示与再次浏览的入口。
-- 优化发现页频道缓存、后续内容预取与切换体验。
-- 发现页信息和控件常驻，取消鼠标移出后的自动隐藏；保留手动清屏。
-- 区分弹幕开启与关闭图标，方便识别当前状态。
+- GitHub 项目主页移至设置页顶部，集中展示仓库名称、项目说明与反馈入口。
+- 首次启动检测并准备缺少的 WebView2 与 HEVC 组件，已有组件跳过，失败时显示明确提示。
+- 包含近期发现页历史过滤、频道缓存与预取、常驻播放控件和弹幕图标优化。
 
 ## 反馈问题
 
