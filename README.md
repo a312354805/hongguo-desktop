@@ -4,7 +4,7 @@
 
 [Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases) · **[下载最新版本](https://github.com/a312354805/hongguo-desktop/releases/latest)** · [全部版本](https://github.com/a312354805/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> 当前版本 **1.1.20** · Windows x64 安装版 · 约 **28.6 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
+> 当前版本 **1.1.22** · Windows x64 安装版 · 约 **85.8 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
 
 ## 下载安装
 
@@ -12,25 +12,25 @@
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.20 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.20/hongguo-desktop-1.1.20-remote-signing-x64-setup.exe)**
+**[下载 1.1.22 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.22/hongguo-desktop-1.1.22-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
 - 首次启动会检测 WebView2 运行时与当前用户的 HEVC 视频扩展，缺少时自动调用内置微软签名组件安装，并重新检查；已有组件直接跳过。
 - WebView2 补装需要联网。若系统策略、权限或许可阻止 HEVC 安装，会显示错误与继续/退出选项。
 - 部分电脑只有声音、进度正常但视频黑屏，与缺少 HEVC 解码支持有关；已有用户安装 HEVC 后恢复画面，并确认自动准备流程可用。
-- 浏览内容与播放视频需要联网；内容是否可用也取决于远程签名服务及第三方接口。
+- 浏览内容与播放视频需要联网；在线请求优先在本机签名，可识别的签名失败时回退现有远程服务；内容是否可用也取决于第三方接口。已下载分集可离线播放。
 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.20-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.22-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.20 安装包的 SHA-256：
+1.1.22 安装包的 SHA-256：
 
 ```text
-7f1c2ee91833958aff886acd6e1a21b1bc37c87f5f36953c54a300decfaf2b61
+37a62458f502e9fbadf0bb9a76f107814365babc405d458c2f55b1a8387910ef
 ```
 
 ## 界面预览
@@ -84,7 +84,9 @@ Get-FileHash .\hongguo-desktop-1.1.20-remote-signing-x64-setup.exe -Algorithm SH
 | 定时停止 | 15 / 30 / 60 / 90 分钟后停止播放 |
 | 个人片单 | 我的收藏、稍后再看、最近观看、我的预约 |
 | 账号同步 | 手机号登录后使用云端片单与观看进度同步；预约等账号功能需要登录 |
-| 桌面体验 | 可折叠侧栏、系统托盘、可自定义老板键；收起时暂停，恢复时按原播放意图处理 |
+| 桌面体验 | 默认中文深色界面、可折叠侧栏、系统托盘、原生小窗与可自定义老板键；小窗下仍控制同一播放窗口 |
+| 本机下载 | 整剧封面卡片、已下载 / 总集数、分集离线播放、补下载、任务管理及合并 |
+| 播放自检 | H.264 / HEVC 本地样片测试、播放错误分类与视频帧诊断 |
 | 数据与更新 | JSON 备份导出 / 导入、安装版应用内检查更新与下载安装；设置页顶部提供 GitHub 项目信息入口 |
 
 清晰度、弹幕、账号同步及预约等功能以具体内容和上游接口实际支持情况为准。
@@ -111,11 +113,13 @@ Get-FileHash .\hongguo-desktop-1.1.20-remote-signing-x64-setup.exe -Algorithm SH
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
 
-### 1.1.20 更新摘要
+### 1.1.22 更新摘要
 
-- GitHub 项目主页移至设置页顶部，集中展示仓库名称、项目说明与反馈入口。
-- 首次启动检测并准备缺少的 WebView2 与 HEVC 组件，已有组件跳过，失败时显示明确提示。
-- 包含近期发现页历史过滤、频道缓存与预取、常驻播放控件和弹幕图标优化。
+- 下载按整部剧展示，支持选集离线播放及补下载未保存的分集，保留暂停、重试、删除和合并。
+- 修复原生小窗与 F9 老板键之间的窗口恢复问题。
+- 弹幕设置集中到控制栏，精简详情信息，默认使用中文深色界面。
+- 本地签名优先，可识别的失败回退现有远程服务；修复热播排行榜数据获取。
+- 新增播放自检与解码诊断，保留 WebView2 / HEVC 组件准备。
 
 ## 反馈问题
 
