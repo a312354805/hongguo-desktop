@@ -4,7 +4,7 @@
 
 [Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases) · **[下载最新版本](https://github.com/a312354805/hongguo-desktop/releases/latest)** · [全部版本](https://github.com/a312354805/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> 当前版本 **1.1.22** · Windows x64 安装版 · 约 **85.8 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
+> 当前版本 **1.1.23** · Windows x64 安装版 · 约 **28.86 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
 
 ## 下载安装
 
@@ -12,7 +12,7 @@
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.22 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.22/hongguo-desktop-1.1.22-remote-signing-x64-setup.exe)**
+**[下载 1.1.23 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.23/hongguo-desktop-1.1.23-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -21,16 +21,18 @@
 - 部分电脑只有声音、进度正常但视频黑屏，与缺少 HEVC 解码支持有关；已有用户安装 HEVC 后恢复画面，并确认自动准备流程可用。
 - 浏览内容与播放视频需要联网；在线请求优先在本机签名，可识别的签名失败时回退现有远程服务；内容是否可用也取决于第三方接口。已下载分集可离线播放。
 
+FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 MiB 的组件，核验压缩包和解压后程序的大小及 SHA-256 后缓存本机，后续可离线复用。普通播放无需下载此组件。
+
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.22-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.23-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.22 安装包的 SHA-256：
+1.1.23 安装包的 SHA-256：
 
 ```text
-37a62458f502e9fbadf0bb9a76f107814365babc405d458c2f55b1a8387910ef
+d246298db7656a514d8e725413f89a5e90fe87084fb4ba256cef37ba782d76e7
 ```
 
 ## 界面预览
@@ -84,7 +86,7 @@ Get-FileHash .\hongguo-desktop-1.1.22-remote-signing-x64-setup.exe -Algorithm SH
 | 定时停止 | 15 / 30 / 60 / 90 分钟后停止播放 |
 | 个人片单 | 我的收藏、稍后再看、最近观看、我的预约 |
 | 账号同步 | 手机号登录后使用云端片单与观看进度同步；预约等账号功能需要登录 |
-| 桌面体验 | 默认中文深色界面、可折叠侧栏、系统托盘、原生小窗与可自定义老板键；小窗下仍控制同一播放窗口 |
+| 桌面体验 | 默认中文深色界面、可折叠侧栏、系统托盘、无原生标题栏小窗与可自定义老板键；鼠标移出小窗后隐藏视频信息和控制栏，小窗下仍控制同一播放窗口 |
 | 本机下载 | 整剧封面卡片、已下载 / 总集数、分集离线播放、补下载、任务管理及合并 |
 | 播放自检 | H.264 / HEVC 本地样片测试、播放错误分类与视频帧诊断 |
 | 数据与更新 | JSON 备份导出 / 导入、安装版应用内检查更新与下载安装；设置页顶部提供 GitHub 项目信息入口 |
@@ -112,6 +114,13 @@ Get-FileHash .\hongguo-desktop-1.1.22-remote-signing-x64-setup.exe -Algorithm SH
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.23 更新摘要
+
+- 安装包缩减至约 28.86 MiB，FFmpeg 改为首次兼容转码时下载、校验并缓存本机。
+- 转码组件优先从 Gitee 下载，失败回退 GitHub；支持取消、失败重试和缓存损坏后重新下载。
+- 画中画与小窗去掉原生标题栏，鼠标移出隐藏视频信息与控制栏，移入恢复。
+- 退出小窗恢复原窗口状态，保留 F9 老板键和托盘收起 / 恢复。
 
 ### 1.1.22 更新摘要
 
