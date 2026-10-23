@@ -4,7 +4,7 @@
 
 [Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases) · **[下载最新版本](https://github.com/a312354805/hongguo-desktop/releases/latest)** · [全部版本](https://github.com/a312354805/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> 当前版本 **1.1.23** · Windows x64 安装版 · 约 **28.86 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
+> 当前版本 **1.1.24** · Windows x64 安装版 · 约 **28.88 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
 
 ## 下载安装
 
@@ -12,7 +12,7 @@
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.23 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.23/hongguo-desktop-1.1.23-remote-signing-x64-setup.exe)**
+**[下载 1.1.24 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.24/hongguo-desktop-1.1.24-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -26,13 +26,13 @@ FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.23-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.24-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.23 安装包的 SHA-256：
+1.1.24 安装包的 SHA-256：
 
 ```text
-d246298db7656a514d8e725413f89a5e90fe87084fb4ba256cef37ba782d76e7
+8109f10f17999a45941eb6a101f1ec7b937d152fbf959e22b1fb9567035d5534
 ```
 
 ## 界面预览
@@ -108,6 +108,15 @@ d246298db7656a514d8e725413f89a5e90fe87084fb4ba256cef37ba782d76e7
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.24 更新摘要
+
+- 下一集提前准备首帧，不启动音频播放；准备完成后停止继续读取，减少切集等待。
+- 复用当前、下一集与上一集的原生播放器，最多保留三个槽位；切换时立即显示已准备的画面。
+- 后台只允许一个下一集预加载任务，当前播放稳定后再启动；暂停、卡顿、切换和窗口隐藏时取消尚未完成的预加载。
+- 发现页只预加载紧邻的下一条，减少后台网络与解码资源争用。
+- 移除播放时的解码方式及解码切换提示，保留正常缓冲、组件下载 / 校验和真实错误提示。
+- 修复快速连续切集时的缓存淘汰，以及停放播放器因缓冲队列满而触发的后台重试。
 
 ### 1.1.23 更新摘要
 
