@@ -4,7 +4,7 @@
 
 [Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases) · **[下载最新版本](https://github.com/a312354805/hongguo-desktop/releases/latest)** · [全部版本](https://github.com/a312354805/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> 当前版本 **1.1.25** · Windows x64 安装版 · 约 **29.00 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
+> 当前版本 **1.1.26** · Windows x64 安装版 · 约 **29.03 MiB**。本仓库用于桌面版分发、使用说明与界面展示。
 
 ## 下载安装
 
@@ -12,7 +12,7 @@
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.25 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.25/hongguo-desktop-1.1.25-remote-signing-x64-setup.exe)**
+**[下载 1.1.26 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.26/hongguo-desktop-1.1.26-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -26,13 +26,13 @@ FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.25-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.26-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.25 安装包的 SHA-256：
+1.1.26 安装包的 SHA-256：
 
 ```text
-2bd11e81a29f4c8dd04b76f9b7dd8317337e47dc6ab06b115d4d7f040a1b1769
+0e830c7c3803cd4daff5d8368ced558ee0e1044cdaa75c7ef42a48ffad54335f
 ```
 
 ## 界面预览
@@ -95,8 +95,8 @@ Get-FileHash .\hongguo-desktop-1.1.25-remote-signing-x64-setup.exe -Algorithm SH
 | 发现页切换故事 | 鼠标滚轮、`↑` / `↓` |
 | 播放 / 暂停 | 点击视频，或按 `空格` |
 | 剧集播放器快退 / 快进 | `←` / `→`，每次 10 秒 |
-| 剧集播放器切换上一集 / 下一集 | 鼠标上滚 / 下滚 |
-| 剧集播放器打开选集 | `↓` |
+| 剧集播放器切换上一集 / 下一集 | 鼠标上滚 / 下滚，或 `↑` / `↓` |
+| 剧集播放器打开选集 | `E` |
 | 剧集播放器全屏 | `F` |
 | 剧集播放器退出全屏 / 返回 | `Esc`，全屏时优先退出全屏 |
 | 老板键 | 默认 `F9`，可在设置中修改 |
@@ -109,6 +109,19 @@ Get-FileHash .\hongguo-desktop-1.1.25-remote-signing-x64-setup.exe -Algorithm SH
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.26 更新摘要
+
+1. **优化发现页切换**：改进视频预加载与播放衔接，复用已准备的播放数据，减少切换时的等待。
+2. **优化暂停后继续播放**：正常暂停时保留当前播放会话，恢复播放优先接续已有缓冲，减少重复加载。
+3. **加快历史续播**：从观看历史继续未看完的剧集时，优先按已保存的集数和进度启动播放，分集列表在后台补齐。
+4. **优化选集播放速度**：提前准备目标剧集，减少重复解析与播放初始化，缩短“正在准备播放”和“正在缓冲”的等待时间。
+5. **新增键盘切集**：播放时按 ↑ 切换上一集，按 ↓ 切换下一集；输入文字或操作菜单时不会误切集。
+6. **修复小窗恢复异常**：修复小窗模式下使用 Win+D 显示桌面后，窗口无法重新显示的问题，改善最小化后的窗口恢复。
+7. **新增意见反馈**：“设置”下方新增“反馈”入口，可提交程序问题、播放问题和功能建议，提交后直接通知作者。
+8. **修复窗口无响应**：修复程序启动及恢复窗口时可能出现界面无响应的问题。
+
+继续保留 1.1.25 的播放防休眠、滚轮切集、固定自动连播开关、云端历史合并、下载续播、合并视频播放器及 ESC 退出全屏等功能。
 
 ### 1.1.25 更新摘要
 
@@ -146,7 +159,7 @@ Get-FileHash .\hongguo-desktop-1.1.25-remote-signing-x64-setup.exe -Algorithm SH
 
 ## 反馈问题
 
-请在 [Issues](https://github.com/a312354805/hongguo-desktop/issues) 中提供客户端版本、Windows 版本、复现步骤和必要截图。请遮盖手机号、Cookie、访问凭证等个人信息。
+可从侧栏“设置”下方的“反馈”入口提交程序问题、播放问题和功能建议，提交后直接通知作者。也可在 [Issues](https://github.com/a312354805/hongguo-desktop/issues) 中提供客户端版本、Windows 版本、复现步骤和必要截图。请遮盖手机号、Cookie、访问凭证等个人信息。
 
 ## 说明与许可
 
