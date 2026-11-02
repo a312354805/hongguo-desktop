@@ -6,17 +6,17 @@
 
 [Windows 下载](#windows-下载安装) · [果子TV 介绍与安装](#果子tv) · [GitHub 发行版](https://github.com/a312354805/hongguo-desktop/releases) · [Gitee 发行版](https://gitee.com/weboo_admin/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> **Windows 1.1.27** · Windows 10 / 11 x64 · 约 **29.04 MiB**。
+> **Windows 1.1.32** · Windows 10 / 11 x64 · 约 **29.07 MiB**。
 
-> **果子TV 1.0.11** · Android 8.0 及以上 · 约 **8.3 MiB**。TV 安装包已提供 GitHub / Gitee 下载入口。
+> **果子TV 1.0.13** · Android 8.0 及以上 · 约 **10.21 MiB**。TV 安装包已提供 GitHub / Gitee 下载入口。
 
 ## Windows 下载安装
 
-1. 打开 [Windows 1.1.27 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.27)，下载名称以 `x64-setup.exe` 结尾的安装包。
+1. 打开 [Windows 1.1.32 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.32)，下载名称以 `x64-setup.exe` 结尾的安装包。
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.27 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.27/hongguo-desktop-1.1.27-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.27/hongguo-desktop-1.1.27-remote-signing-x64-setup.exe)**
+**[下载 1.1.32 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.32/hongguo-desktop-1.1.32-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.32/hongguo-desktop-1.1.32-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -30,13 +30,13 @@ FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.27-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.32-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.27 安装包的 SHA-256：
+1.1.32 安装包的 SHA-256：
 
 ```text
-c7192cd0c251d28839c651362cb56d9c4a116f4ba444d9997c59cd1f7c442cc5
+6253738fdbf0c47e814eeeced18e774673bec12cdbeff262fa55238029c813e4
 ```
 
 ## Windows 界面预览
@@ -113,6 +113,18 @@ c7192cd0c251d28839c651362cb56d9c4a116f4ba444d9997c59cd1f7c442cc5
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.32 更新摘要
+
+1. **完善下载任务管理**：优化管理入口，支持批量暂停、停止、重试、删除任务，以及确认后清理整部剧的下载。
+2. **优化下载文件管理**：合并文件按剧名和集数范围命名，同名文件自动区分；修复“打开所在文件夹”的定位问题。
+3. **优化下载画质与分集状态**：新下载默认选择最高可用分辨率，支持手动选择画质；显示分集下载状态，避免重复添加任务。
+4. **修复部分分集无法播放**：修复部分短剧特定分集打不开的问题，提升播放稳定性。
+5. **增强播放失败自动恢复**：播放失败时自动尝试其他可用线路，减少手动重试。
+6. **减少播放准备等待**：优化播放组件检查，减少正常启动后的重复等待。
+7. **新增“我的反馈”**：无需填写邮箱，即可查看本机反馈记录、处理状态和作者回复。
+8. **优化内容请求稳定性**：改进请求失败后的自动切换和恢复处理。
+9. **新增信息收集开关**：可在设置中查看收集内容并手动关闭使用统计。
 
 ### 1.1.27 更新摘要
 
@@ -206,9 +218,9 @@ c7192cd0c251d28839c651362cb56d9c4a116f4ba444d9997c59cd1f7c442cc5
 
 ### 下载安装
 
-**果子TV 1.0.11**：**[Gitee 下载 APK](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/tv-v1.0.11/guozi-tv-1.0.11-universal.apk)** · **[GitHub 下载 APK](https://github.com/a312354805/hongguo-desktop/releases/download/tv-v1.0.11/guozi-tv-1.0.11-universal.apk)**。
+**果子TV 1.0.13**：**[Gitee 下载 APK](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/tv-v1.0.13/guozi-tv-1.0.13-universal.apk)** · **[GitHub 下载 APK](https://github.com/a312354805/hongguo-desktop/releases/download/tv-v1.0.13/guozi-tv-1.0.13-universal.apk)**。
 
-[TV 1.0.11 Gitee 发行页](https://gitee.com/weboo_admin/hongguo-desktop/releases/tag/tv-v1.0.11) · [GitHub 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/tv-v1.0.11)
+[TV 1.0.13 Gitee 发行页](https://gitee.com/weboo_admin/hongguo-desktop/releases/tag/tv-v1.0.13) · [GitHub 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/tv-v1.0.13)
 
 1. 下载 APK，通过 U 盘、电视文件管理器或 ADB 传到电视上安装。
 2. 如系统询问，允许当前文件管理器或安装来源安装应用。
@@ -235,7 +247,7 @@ c7192cd0c251d28839c651362cb56d9c4a116f4ba444d9997c59cd1f7c442cc5
 在已配置 ADB 并连接电视后执行：
 
 ```sh
-adb install -r guozi-tv-1.0.11-universal.apk
+adb install -r guozi-tv-1.0.13-universal.apk
 ```
 
 #### 安装包校验
@@ -245,8 +257,13 @@ adb install -r guozi-tv-1.0.11-universal.apk
 当前 APK 的 SHA-256：
 
 ```text
-6066db18add1addca84ac3028e8bcb87811f6aed08c1eb63cb67ba99af3345e9
+b9cbd31d60a0dfe0b5891ec1f8413bcc482b920499197769e397dedb392a0987
 ```
+
+### 1.0.13 更新摘要
+
+1. **修复部分分集无法播放**：修复部分短剧特定分集打不开的问题，提升播放兼容性。
+2. **提升播放稳定性**：播放失败时自动尝试其他可用线路，减少临时线路故障带来的影响。
 
 ### 遥控器操作
 
@@ -307,7 +324,9 @@ adb install -r guozi-tv-1.0.11-universal.apk
 
 ## 反馈问题
 
-Windows 桌面端可从侧栏“设置”下方的“反馈”入口提交程序问题、播放问题和功能建议，提交后直接通知作者。也可在 [Issues](https://github.com/a312354805/hongguo-desktop/issues) 中提供客户端版本、Windows 版本、复现步骤和必要截图。请遮盖手机号、Cookie、访问凭证等个人信息。
+Windows 桌面端可从侧栏“设置”下方的“反馈”入口提交程序问题、播放问题和功能建议，提交后通知作者。新版源码增加按匿名安装身份保存的“我的反馈”，无需留邮箱即可查看历史和作者回复；需要服务端与 Windows 客户端一起更新后启用，详见 [匿名设备反馈说明](docs/2026-11-02_desktop-feedback-inbox.md)。也可在 [Issues](https://github.com/a312354805/hongguo-desktop/issues) 中提供客户端版本、Windows 版本、复现步骤和必要截图。请遮盖手机号、Cookie、访问凭证等个人信息。
+
+服务端源码同时提供 `/admin/feedback` 反馈工作台，支持按状态、类型及 Umami ID 等信息检索，查看设备会话、修改状态和回复；使用独立管理员令牌登录。需先更新服务并配置反馈存储与管理员令牌，配置方法见上述匿名设备反馈说明。
 
 TV 端反馈请同时注明应用版本、电视型号、Android 与 WebView 版本；截图和日志请遮盖手机号、验证码及登录凭据。
 
