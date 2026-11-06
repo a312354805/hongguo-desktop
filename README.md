@@ -6,17 +6,17 @@
 
 [Windows 下载](#windows-下载安装) · [果子TV 介绍与安装](#果子tv) · [GitHub 发行版](https://github.com/a312354805/hongguo-desktop/releases) · [Gitee 发行版](https://gitee.com/weboo_admin/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> **Windows 1.1.33** · Windows 10 / 11 x64 · 约 **29.07 MiB**。
+> **Windows 1.1.34** · Windows 10 / 11 x64 · 约 **29.28 MiB**。
 
 > **果子TV 1.0.13** · Android 8.0 及以上 · 约 **10.21 MiB**。TV 安装包已提供 GitHub / Gitee 下载入口。
 
 ## Windows 下载安装
 
-1. 打开 [Windows 1.1.33 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.33)，下载名称以 `x64-setup.exe` 结尾的安装包。
+1. 打开 [Windows 1.1.34 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.34)，下载名称以 `x64-setup.exe` 结尾的安装包。
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.33 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.33/hongguo-desktop-1.1.33-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.33/hongguo-desktop-1.1.33-remote-signing-x64-setup.exe)**
+**[下载 1.1.34 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.34/hongguo-desktop-1.1.34-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.34/hongguo-desktop-1.1.34-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -30,13 +30,13 @@ FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.33-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.34-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.33 安装包的 SHA-256：
+1.1.34 安装包的 SHA-256：
 
 ```text
-0dd0b68fea81c8562810e682db07f03d2ab9f0303848893af7172fed48913416
+abdc1e98a871ac6f1e7150abf38abab4973c0824115a112f3098efc77a19bf9c
 ```
 
 ## Windows 界面预览
@@ -82,12 +82,12 @@ Get-FileHash .\hongguo-desktop-1.1.33-remote-signing-x64-setup.exe -Algorithm SH
 | 剧集播放 | 选集、上一集 / 下一集、断点续播、自动连播、弹幕开关、全屏 |
 | 播放设置 | 多档倍速、音量与静音、可用清晰度切换、完整画面 / 等比铺满 / 拉伸铺满 |
 | 定时停止 | 15 / 30 / 60 / 90 分钟后停止播放 |
-| 个人片单 | 我的收藏、稍后再看、最近观看、我的预约 |
+| 个人片单 | 我的收藏、稍后再看、最近观看、我的预约、追更列表与未看完更新数量提示 |
 | 账号同步 | 手机号登录后使用云端片单与观看进度同步；预约等账号功能需要登录 |
 | 桌面体验 | 默认中文深色界面、可折叠侧栏、系统托盘、无原生标题栏小窗与可自定义老板键；鼠标移出小窗后隐藏视频信息和控制栏，小窗下仍控制同一播放窗口 |
 | 本机下载 | 整剧封面卡片、已下载 / 总集数、分集离线播放、补下载、任务管理及合并 |
 | 播放自检 | H.264 / HEVC 本地样片测试、播放错误分类与视频帧诊断 |
-| 数据与更新 | JSON 备份导出 / 导入、安装版应用内检查更新与下载安装；设置页顶部提供 GitHub 项目信息与 TV 版 Gitee 下载入口 |
+| 数据与更新 | 缓存占用查看与清理、JSON 备份导出 / 导入、安装版应用内检查更新与下载安装；设置页顶部提供 GitHub 项目信息与 TV 版 Gitee 下载入口 |
 
 清晰度、弹幕、账号同步及预约等功能以具体内容和上游接口实际支持情况为准。
 
@@ -113,6 +113,17 @@ Get-FileHash .\hongguo-desktop-1.1.33-remote-signing-x64-setup.exe -Algorithm SH
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.34 更新摘要
+
+1. **新增追更列表**：连载剧集支持追更，详情页显示连载标识，左侧菜单提示有新集未看完的剧集数量。
+2. **新增缓存管理**：支持查看缓存占用并清理缓存，释放本地空间。
+3. **优化本地播放**：已下载的分集优先使用本地视频播放，减少等待和网络消耗。
+4. **优化下载与合并**：优化兼容合并，仅对不兼容的视频分集进行转码，减少重复处理，加快兼容合并速度。
+5. **修复预约按钮显示**：仅在剧集尚无分集时显示预约，已上线且有分集的剧集不再显示预约按钮。
+6. **优化发现页缓存**：返回发现页时恢复各频道的当前剧目、播放进度与暂停状态，减少重复加载；缓存有效期为 10 分钟，支持手动刷新。
+7. **调整弹幕控件位置**：发现页播放器的弹幕开关和弹幕设置移至右侧，与其他播放设置集中展示。
+8. **精简播放器界面**：移除右上角重复的“选集”按钮，保留底部选集入口和 E 键快捷操作。
 
 ### 1.1.33 更新摘要｜紧急修复
 
