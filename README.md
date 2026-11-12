@@ -6,17 +6,17 @@
 
 [Windows 下载](#windows-下载安装) · [果子TV 介绍与安装](#果子tv) · [GitHub 发行版](https://github.com/a312354805/hongguo-desktop/releases) · [Gitee 发行版](https://gitee.com/weboo_admin/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> **Windows 1.1.34** · Windows 10 / 11 x64 · 约 **29.28 MiB**。
+> **Windows 1.1.35** · Windows 10 / 11 x64 · 约 **29.28 MiB**。
 
 > **果子TV 1.0.13** · Android 8.0 及以上 · 约 **10.21 MiB**。TV 安装包已提供 GitHub / Gitee 下载入口。
 
 ## Windows 下载安装
 
-1. 打开 [Windows 1.1.34 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.34)，下载名称以 `x64-setup.exe` 结尾的安装包。
+1. 打开 [Windows 1.1.35 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.35)，下载名称以 `x64-setup.exe` 结尾的安装包。
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.34 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.34/hongguo-desktop-1.1.34-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.34/hongguo-desktop-1.1.34-remote-signing-x64-setup.exe)**
+**[下载 1.1.35 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.35/hongguo-desktop-1.1.35-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.35/hongguo-desktop-1.1.35-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -30,13 +30,13 @@ FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.34-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.35-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.34 安装包的 SHA-256：
+1.1.35 安装包的 SHA-256：
 
 ```text
-abdc1e98a871ac6f1e7150abf38abab4973c0824115a112f3098efc77a19bf9c
+5bd138b4eba6fd67c45c70f0bc7c62b5c67e6308abfc4d7eb45e5d797eb51e9f
 ```
 
 ## Windows 界面预览
@@ -113,6 +113,12 @@ abdc1e98a871ac6f1e7150abf38abab4973c0824115a112f3098efc77a19bf9c
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.35 更新摘要
+
+1. **修复部分剧集无法播放的问题**。
+2. **优化播放失败统计**：记录剧集名称、集数、失败阶段和失败原因。
+3. **优化接口失败统计**：记录签名接口和红果接口请求失败信息。
 
 ### 1.1.34 更新摘要
 
