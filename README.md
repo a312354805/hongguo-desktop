@@ -6,17 +6,17 @@
 
 [Windows 下载](#windows-下载安装) · [果子TV 介绍与安装](#果子tv) · [GitHub 发行版](https://github.com/a312354805/hongguo-desktop/releases) · [Gitee 发行版](https://gitee.com/weboo_admin/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> **Windows 1.1.50** · Windows 10 / 11 x64 · 约 **29.44 MiB**。
+> **Windows 1.1.52** · Windows 10 / 11 x64 · 约 **29.44 MiB**。
 
-> **果子TV 1.0.13** · Android 8.0 及以上 · 约 **10.21 MiB**。TV 安装包已提供 GitHub / Gitee 下载入口。
+> **果子TV 1.0.20** · Android 8.0 及以上 · 约 **10.14 MiB**。TV 安装包已提供 GitHub / Gitee 下载入口。
 
 ## Windows 下载安装
 
-1. 打开 [Windows 1.1.50 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.50)，下载名称以 `x64-setup.exe` 结尾的安装包。
+1. 打开 [Windows 1.1.52 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.52)，下载名称以 `x64-setup.exe` 结尾的安装包。
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.50 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.50/hongguo-desktop-1.1.50-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.50/hongguo-desktop-1.1.50-remote-signing-x64-setup.exe)**
+**[下载 1.1.52 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.52/hongguo-desktop-1.1.52-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.52/hongguo-desktop-1.1.52-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -30,13 +30,13 @@ FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.50-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.52-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.50 安装包的 SHA-256：
+1.1.52 安装包的 SHA-256：
 
 ```text
-6052cd7c11d78c8b67f19bece98896e683ce34c0a24b00fb179bcd2f06a75426
+f9524e112934fcb1a6d8b4d61a73d47170a91371c5d1c8120e5b23730906171e
 ```
 
 ## Windows 界面预览
@@ -83,7 +83,7 @@ Get-FileHash .\hongguo-desktop-1.1.50-remote-signing-x64-setup.exe -Algorithm SH
 | 播放设置 | 多档倍速、音量与静音、可用清晰度切换、完整画面 / 等比铺满 / 拉伸铺满 |
 | 定时停止 | 15 / 30 / 60 / 90 分钟后停止播放 |
 | 个人片单 | 我的收藏、稍后再看、最近观看、我的预约、追更列表与未看完更新数量提示 |
-| 账号同步 | 手机号登录后使用云端片单与观看进度同步；预约等账号功能需要登录 |
+| 账号同步 | 支持红果 App 扫码及手机号登录，使用云端片单与观看进度同步；预约等账号功能需要登录 |
 | 桌面体验 | 默认中文深色界面、可折叠侧栏、系统托盘、无原生标题栏小窗与可自定义老板键；鼠标移出小窗后隐藏视频信息和控制栏，小窗下仍控制同一播放窗口 |
 | 本机下载 | 整剧封面卡片、已下载 / 总集数、分集离线播放、补下载、任务管理及合并 |
 | 播放自检 | H.264 / HEVC 本地样片测试、播放错误分类与视频帧诊断 |
@@ -113,6 +113,13 @@ Get-FileHash .\hongguo-desktop-1.1.50-remote-signing-x64-setup.exe -Algorithm SH
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.52 更新摘要
+
+- 新增红果 App 扫码登录，扫码后在手机上确认即可登录。
+- 进入扫码页面直接显示二维码，移除平台协议和隐私条款勾选区。
+- 二维码到期自动更新，同时保留手动刷新。
+- 保留手机号验证码登录、登录资料导入导出及本机加密保存。
 
 ### 1.1.50 更新摘要
 
@@ -263,7 +270,7 @@ Get-FileHash .\hongguo-desktop-1.1.50-remote-signing-x64-setup.exe -Algorithm SH
 | 播放体验 | 断点续播、自动连播、清晰度、倍速和画面模式；下一集预加载，减少切集等待 |
 | 弹幕 | 支持表情显示与样式设置，过滤包含“参与弹幕活动”的弹幕 |
 | 中文搜索 | 遥控器拼音选字、系统键盘、同一局域网手机扫码输入 |
-| 登录与同步 | 手机号验证码登录及平台安全验证，收藏、观看记录和预约一键同步 |
+| 登录与同步 | 红果 App 扫码登录、手机号验证码登录及平台安全验证，收藏、观看记录和预约一键同步 |
 | 我的片单 | 收藏、稍后看、当前集数与观看进度条；记录支持全部、未看完、已看完，预约区分已上线和待上线 |
 | 应用更新 | 应用内检查更新、查看更新说明、下载及校验安装包，再交由系统确认安装 |
 
@@ -283,9 +290,9 @@ Get-FileHash .\hongguo-desktop-1.1.50-remote-signing-x64-setup.exe -Algorithm SH
 
 ### 下载安装
 
-**果子TV 1.0.13**：**[Gitee 下载 APK](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/tv-v1.0.13/guozi-tv-1.0.13-universal.apk)** · **[GitHub 下载 APK](https://github.com/a312354805/hongguo-desktop/releases/download/tv-v1.0.13/guozi-tv-1.0.13-universal.apk)**。
+**果子TV 1.0.20**：**[Gitee 下载 APK](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/tv-v1.0.20/guozi-tv-1.0.20-universal.apk)** · **[GitHub 下载 APK](https://github.com/a312354805/hongguo-desktop/releases/download/tv-v1.0.20/guozi-tv-1.0.20-universal.apk)**。
 
-[TV 1.0.13 Gitee 发行页](https://gitee.com/weboo_admin/hongguo-desktop/releases/tag/tv-v1.0.13) · [GitHub 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/tv-v1.0.13)
+[TV 1.0.20 Gitee 发行页](https://gitee.com/weboo_admin/hongguo-desktop/releases/tag/tv-v1.0.20) · [GitHub 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/tv-v1.0.20)
 
 1. 下载 APK，通过 U 盘、电视文件管理器或 ADB 传到电视上安装。
 2. 如系统询问，允许当前文件管理器或安装来源安装应用。
@@ -312,7 +319,7 @@ Get-FileHash .\hongguo-desktop-1.1.50-remote-signing-x64-setup.exe -Algorithm SH
 在已配置 ADB 并连接电视后执行：
 
 ```sh
-adb install -r guozi-tv-1.0.13-universal.apk
+adb install -r guozi-tv-1.0.20-universal.apk
 ```
 
 #### 安装包校验
@@ -322,8 +329,15 @@ adb install -r guozi-tv-1.0.13-universal.apk
 当前 APK 的 SHA-256：
 
 ```text
-b9cbd31d60a0dfe0b5891ec1f8413bcc482b920499197769e397dedb392a0987
+68f1ff048ae7c2b41ca86bc65f2a52d45924f9f5989b527f23696308e8db07d6
 ```
+
+### 1.0.20 更新摘要
+
+- 新增红果 App 扫码登录，二维码直接显示在账号面板，无需再打开扫码弹框。
+- 二维码到期自动刷新；退到后台暂停，回到前台自动获取新码。
+- 保留手机号登录、遥控器输入及局域网扫码填码，刷新二维码不清空已填内容。
+- 修复播放组件下载地址失效导致的初始化失败问题。
 
 ### 1.0.13 更新摘要
 
@@ -353,6 +367,8 @@ b9cbd31d60a0dfe0b5891ec1f8413bcc482b920499197769e397dedb392a0987
 扫码页面不依赖外部中转服务，二维码单次有效、最长 5 分钟。关闭扫码窗口或应用进入后台后，请重新生成二维码。
 
 ### 账号与观看记录
+
+打开账号面板即可看到登录二维码，使用红果 App 扫码并在手机确认；二维码到期自动刷新。也可继续使用手机号验证码登录和同一局域网扫码填码。
 
 未登录时，可使用本机收藏、稍后看与观看记录。登录后，可使用「一键同步」读取账号收藏、观看记录及预约，播放进度会按播放流程上报。
 
