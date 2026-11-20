@@ -36,7 +36,7 @@ Get-FileHash .\hongguo-desktop-1.1.50-remote-signing-x64-setup.exe -Algorithm SH
 1.1.50 安装包的 SHA-256：
 
 ```text
-57699bdd7d98ebff3e72b06d040171c10b58a9170ac0d032b34062cf929c337a
+6052cd7c11d78c8b67f19bece98896e683ce34c0a24b00fb179bcd2f06a75426
 ```
 
 ## Windows 界面预览
