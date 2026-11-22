@@ -6,17 +6,21 @@
 
 [Windows 下载](#windows-下载安装) · [果子TV 介绍与安装](#果子tv) · [GitHub 发行版](https://github.com/a312354805/hongguo-desktop/releases) · [Gitee 发行版](https://gitee.com/weboo_admin/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> **Windows 1.1.52** · Windows 10 / 11 x64 · 约 **29.44 MiB**。
+> **Windows 1.1.53** · Windows 10 / 11 x64 · 约 **29.44 MiB**。
 
 > **果子TV 1.0.20** · Android 8.0 及以上 · 约 **10.14 MiB**。TV 安装包已提供 GitHub / Gitee 下载入口。
 
 ## Windows 下载安装
 
-1. 打开 [Windows 1.1.52 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.52)，下载名称以 `x64-setup.exe` 结尾的安装包。
+**安装提示：如果安装时提示“无法关闭窗口”，请先将应用最小化，再恢复窗口，然后重试安装。**
+
+**重要提醒：即将停用 1.1.40 以前版本使用的接口。请仍在使用旧版的用户尽快更新，以免影响正常使用。**
+
+1. 打开 [Windows 1.1.53 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.53)，下载名称以 `x64-setup.exe` 结尾的安装包。
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.52 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.52/hongguo-desktop-1.1.52-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.52/hongguo-desktop-1.1.52-remote-signing-x64-setup.exe)**
+**[下载 1.1.53 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.53/hongguo-desktop-1.1.53-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.53/hongguo-desktop-1.1.53-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -30,13 +34,13 @@ FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.52-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.53-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.52 安装包的 SHA-256：
+1.1.53 安装包的 SHA-256：
 
 ```text
-f9524e112934fcb1a6d8b4d61a73d47170a91371c5d1c8120e5b23730906171e
+cdb1a68ad96b73edaab1458b020667ef3912ea1dafc21c79c80e3aec4a32bea0
 ```
 
 ## Windows 界面预览
@@ -86,7 +90,6 @@ f9524e112934fcb1a6d8b4d61a73d47170a91371c5d1c8120e5b23730906171e
 | 账号同步 | 支持红果 App 扫码及手机号登录，使用云端片单与观看进度同步；预约等账号功能需要登录 |
 | 桌面体验 | 默认中文深色界面、可折叠侧栏、系统托盘、无原生标题栏小窗与可自定义老板键；鼠标移出小窗后隐藏视频信息和控制栏，小窗下仍控制同一播放窗口 |
 | 本机下载 | 整剧封面卡片、已下载 / 总集数、分集离线播放、补下载、任务管理及合并 |
-| 播放自检 | H.264 / HEVC 本地样片测试、播放错误分类与视频帧诊断 |
 | 数据与更新 | 缓存占用查看与清理、JSON 备份导出 / 导入、安装版应用内检查更新与下载安装；设置页顶部提供 GitHub 项目信息与 TV 版 Gitee 下载入口 |
 
 清晰度、弹幕、账号同步及预约等功能以具体内容和上游接口实际支持情况为准。
@@ -113,6 +116,22 @@ f9524e112934fcb1a6d8b4d61a73d47170a91371c5d1c8120e5b23730906171e
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.53 更新摘要
+
+**安装提示：如果安装时提示“无法关闭窗口”，请先将应用最小化，再恢复窗口，然后重试安装。**
+
+**重要提醒：即将停用 1.1.40 以前版本使用的接口。请仍在使用旧版的用户尽快更新，以免影响正常使用。**
+
+**红果桌面版 1.1.53 更新说明**
+
+- 修复已登录后关注频道无法获取账号内容的问题；推荐、漫剧、真人剧也支持携带当前账号会话。
+- 修正关注页提示，区分未登录、暂无内容和请求失败。
+- 优化发现页加载顺序，优先准备当前视频，减少首屏等待。
+- 分类剧库默认受众调整为“全部”，不再默认选中女频。
+- 优化长时间暂停后的续播与下一集预加载，减少切集等待。
+- 观看进度调整为每 20 秒同步；暂停时立即提交，恢复播放后重新计时。同步失败保留本机记录，支持手动重试。
+- 修正接口错误分类及重复上报问题。
 
 ### 1.1.52 更新摘要
 
