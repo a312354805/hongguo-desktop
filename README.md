@@ -6,21 +6,21 @@
 
 [Windows 下载](#windows-下载安装) · [果子TV 介绍与安装](#果子tv) · [GitHub 发行版](https://github.com/a312354805/hongguo-desktop/releases) · [Gitee 发行版](https://gitee.com/weboo_admin/hongguo-desktop/releases) · [反馈问题](https://github.com/a312354805/hongguo-desktop/issues)
 
-> **Windows 1.1.53** · Windows 10 / 11 x64 · 约 **29.44 MiB**。
+> **Windows 1.1.54** · Windows 10 / 11 x64 · 约 **29.44 MiB**。
 
 > **果子TV 1.0.20** · Android 8.0 及以上 · 约 **10.14 MiB**。TV 安装包已提供 GitHub / Gitee 下载入口。
 
 ## Windows 下载安装
 
-**安装提示：如果安装时提示“无法关闭窗口”，请先将应用最小化，再恢复窗口，然后重试安装。**
+**可选更新**
 
-**重要提醒：即将停用 1.1.40 以前版本使用的接口。请仍在使用旧版的用户尽快更新，以免影响正常使用。**
+如遇切集时提示“视频尚未播完，数据流已提前结束”或出现闪屏，建议更新；未遇到上述问题的用户可暂不更新。
 
-1. 打开 [Windows 1.1.53 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.53)，下载名称以 `x64-setup.exe` 结尾的安装包。
+1. 打开 [Windows 1.1.54 发行页](https://github.com/a312354805/hongguo-desktop/releases/tag/v1.1.54)，下载名称以 `x64-setup.exe` 结尾的安装包。
 2. 运行安装程序，完成安装后打开「红果桌面版」。
 3. 从「发现」直接开始浏览，或通过分类剧库、搜索、排行榜寻找想看的内容。
 
-**[下载 1.1.53 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.53/hongguo-desktop-1.1.53-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.53/hongguo-desktop-1.1.53-remote-signing-x64-setup.exe)**
+**[下载 1.1.54 安装包](https://github.com/a312354805/hongguo-desktop/releases/download/v1.1.54/hongguo-desktop-1.1.54-remote-signing-x64-setup.exe)** · **[Gitee 下载](https://gitee.com/weboo_admin/hongguo-desktop/releases/download/v1.1.54/hongguo-desktop-1.1.54-remote-signing-x64-setup.exe)**
 
 - 面向 Windows 10 / 11 的 x64 设备。
 - 不需要另外安装 Node.js、Docker，或手动配置本地内容服务。
@@ -34,13 +34,13 @@ FFmpeg 不再随安装包分发，首次需要兼容转码时自动下载约 82 
 Release 同时提供 `SHA256SUMS.txt` 和应用内更新使用的 `.sig` 文件。普通安装只需下载 `.exe`。需要校验时，可在 PowerShell 中运行：
 
 ```powershell
-Get-FileHash .\hongguo-desktop-1.1.53-remote-signing-x64-setup.exe -Algorithm SHA256
+Get-FileHash .\hongguo-desktop-1.1.54-remote-signing-x64-setup.exe -Algorithm SHA256
 ```
 
-1.1.53 安装包的 SHA-256：
+1.1.54 安装包的 SHA-256：
 
 ```text
-cdb1a68ad96b73edaab1458b020667ef3912ea1dafc21c79c80e3aec4a32bea0
+9dcd893b8f5a660f950cce636076fc3da7e676d3e1c77c8b981d728aea3443be
 ```
 
 ## Windows 界面预览
@@ -116,6 +116,15 @@ cdb1a68ad96b73edaab1458b020667ef3912ea1dafc21c79c80e3aec4a32bea0
 - 覆盖安装保留应用数据。重要片单建议先通过设置导出 JSON 备份。
 - 收藏、稍后再看、观看记录和播放设置保存在本机用户数据目录；登录后可使用对应的云端同步能力。
 - 本仓库提供 GitHub 下载入口；应用内更新继续使用客户端配置的更新渠道。
+
+### 1.1.54 更新摘要
+
+**可选更新**
+
+如遇切集时提示“视频尚未播完，数据流已提前结束”或出现闪屏，建议更新；未遇到上述问题的用户可暂不更新。
+
+- 修复部分剧集播放到片尾时闪屏，并误提示“视频尚未播完，数据流已提前结束”，导致无法自动切换下一集的问题。
+- 优化片尾播放完成判定，避免音视频时长差异影响自动连播。
 
 ### 1.1.53 更新摘要
 
